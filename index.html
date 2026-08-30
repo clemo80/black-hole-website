@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK HOLE | A Short Film by Pia Mechler</title>
+    <style>
+        /* A24-style minimal, cinematic styling */
+        :root {
+            --bg-color: #050505;
+            --text-color: #f4f4f4;
+            --accent-color: #888888;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* One strong typeface */
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section - Full Screen */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 10vh;
+            box-sizing: border-box;
+            
+            /* ASSET PLACEHOLDER: Replace 'hero-still.jpg' with your strongest/most intriguing image */
+            background: linear-gradient(rgba(5, 5, 5, 0.2), rgba(5, 5, 5, 0.9)), url('hero-still.jpg') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin: 0 0 10px 0;
+            letter-spacing: 0.2em;
+        }
+
+        .hero h2 {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin: 0 0 40px 0;
+        }
+
+        .teaser-btn {
+            display: inline-block;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-bottom: 60px;
+        }
+
+        .teaser-btn:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .laurels {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: var(--accent-color);
+            max-width: 80%;
+            line-height: 1.8;
+            text-transform: uppercase;
+        }
+
+        /* Content Sections - High Negative Space */
+        .content-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15vh 20px;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #d0d0d0;
+        }
+
+        .metadata {
+            margin-top: 50px;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            line-height: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Footer Section */
+        .footer {
+            border-top: 1px solid #222;
+            padding: 10vh 20px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .footer h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO — first screen -->
+    <header class="hero">
+        <h1>BLACK HOLE</h1>
+        <h2>A short film by Pia Mechler</h2>
+        
+        <!-- ASSET PLACEHOLDER: Add the teaser video link in the href below -->
+        <a href="#teaser-link" class="teaser-btn">[ WATCH TEASER ]</a>
+        
+        <div class="laurels">
+            FESTIVAL SELECTIONS · BEST COMEDY SHORT NOMINEE — BURBANK INTERNATIONAL FILM FESTIVAL
+        </div>
+    </header>
+
+    <!-- 2. Synopsis Section -->
+    <section class="content-section">
+        <h2>BLACK HOLE</h2>
+        <p>Black Hole is a short film written and directed by Pia Mechler.</p>
+        
+        <!-- ASSET PLACEHOLDER: Add 2-3 sentences about the premise below -->
+        <p>[Insert 2-3 sentences about the premise here. Keep the tone slightly unsettling and editorial.]</p>
+        
+        <div class="metadata">
+            Genre: Psychological comedy / surreal drama<br>
+            Format: Short film<br>
+            Writer / Director: Pia Mechler
+        </div>
+    </section>
+
+    <!-- 3. Director Bio Section -->
+    <section class="content-section">
+        <h2>PIA MECHLER</h2>
+        <div class="metadata" style="margin-top: -20px; margin-bottom: 30px;">Writer / Director / Actor</div>
+        
+        <!-- ASSET PLACEHOLDER: Add 3-4 sentences for the bio below -->
+        <p>[Insert 3-4 sentences of biographical text here.]</p>
+    </section>
+
+    <!-- 4. Footer -->
+    <footer class="footer">
+        <h3>Coming soon</h3>
+        <h2>AFTER THE BLOOD</h2>
+        <p style="font-size: 1rem; color: var(--accent-color);">A psychological horror with a surreal comedic twist</p>
+        
+        <!-- ASSET PLACEHOLDER: Add feature logline below -->
+        <p style="font-size: 0.9rem; font-style: italic;">[Insert feature logline here]</p>
+    </footer>
+
+</body>
+</html>
