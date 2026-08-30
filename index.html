@@ -1,183 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLACK HOLE | A Short Film by Pia Mechler</title>
-    <style>
-        /* A24-style minimal, cinematic styling */
-        :root {
-            --bg-color: #050505;
-            --text-color: #f4f4f4;
-            --accent-color: #888888;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Hole — a short film by Pia Mechler</title>
+<meta name="description" content="Black Hole, a short film written and directed by Pia Mechler. Official selection at Burbank International Film Festival, Chelsea Film Festival, Tabor Film Festival and more.">
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* One strong typeface */
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-        h1, h2, h3 {
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
+<style>
+  :root{
+    --bg: #eff306;
+    --ink: #0a0a0a;
+    --white: #ffffff;
+    --dim: rgba(10,10,10,0.6);
+    --faint: rgba(10,10,10,0.35);
+    --line: rgba(10,10,10,0.18);
+    --wrap: 720px;
+    --edge: clamp(24px, 6vw, 64px);
+  }
 
-        /* Hero Section - Full Screen */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 10vh;
-            box-sizing: border-box;
-            
-            /* ASSET PLACEHOLDER: Replace 'hero-still.jpg' with your strongest/most intriguing image */
-            background: linear-gradient(rgba(5, 5, 5, 0.2), rgba(5, 5, 5, 0.9)), url('hero-still.jpg') no-repeat center center/cover;
-        }
+  *{ box-sizing: border-box; }
+  html{ background: var(--bg); scroll-behavior: smooth; }
 
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            margin: 0 0 10px 0;
-            letter-spacing: 0.2em;
-        }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Archivo', Arial, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
 
-        .hero h2 {
-            font-size: 1rem;
-            color: var(--accent-color);
-            margin: 0 0 40px 0;
-        }
+  ::selection{ background: var(--ink); color: var(--bg); }
 
-        .teaser-btn {
-            display: inline-block;
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 12px 30px;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            margin-bottom: 60px;
-        }
+  a{ color: inherit; }
 
-        .teaser-btn:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
+  .display{
+    font-family: 'Anton', Arial, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
 
-        .laurels {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            color: var(--accent-color);
-            max-width: 80%;
-            line-height: 1.8;
-            text-transform: uppercase;
-        }
+  .eyebrow{
+    font-family: 'Anton', Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 26px;
+  }
 
-        /* Content Sections - High Negative Space */
-        .content-section {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 15vh 20px;
-            text-align: center;
-        }
+  section{
+    padding: 88px var(--edge);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
-        .content-section h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
+  .content{
+    max-width: var(--wrap);
+  }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: #d0d0d0;
-        }
+  .rule{
+    max-width: 1100px;
+    margin: 0 auto;
+    border: none;
+    border-top: 2px solid var(--ink);
+    opacity: 0.9;
+  }
 
-        .metadata {
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            line-height: 2;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
+  /* ---------- HERO / POSTER ---------- */
 
-        /* Footer Section */
-        .footer {
-            border-top: 1px solid #222;
-            padding: 10vh 20px;
-            text-align: center;
-        }
+  .hero{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(28px, 6vw, 64px) var(--edge) 0;
+  }
 
-        .footer h3 {
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-        
-        .footer h2 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-    </style>
+  .poster-frame{
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    line-height: 0;
+  }
+
+  .poster-frame img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .play-btn{
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(64px, 12vw, 88px);
+    height: clamp(64px, 12vw, 88px);
+    border-radius: 50%;
+    background: rgba(10,10,10,0.88);
+    border: 3px solid var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .3s ease, background .3s ease;
+  }
+
+  .play-btn::before{
+    content:"";
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    border: 2px solid rgba(10,10,10,0.55);
+    animation: pulse 2.6s ease-out infinite;
+  }
+
+  .play-btn svg{
+    width: 34%;
+    height: 34%;
+    margin-left: 4%;
+    fill: var(--bg);
+  }
+
+  .play-btn:hover{
+    transform: translate(-50%, -50%) scale(1.08);
+    background: var(--ink);
+  }
+
+  @keyframes pulse{
+    0%{ transform: scale(0.9); opacity: 0.7; }
+    70%{ transform: scale(1.35); opacity: 0; }
+    100%{ opacity: 0; }
+  }
+
+  .hero-caption{
+    text-align: center;
+    max-width: 620px;
+    margin: 18px auto 0;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* ---------- REVEAL ---------- */
+
+  .reveal{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- LAURELS ---------- */
+
+  .laurels-large{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(16px, 4vw, 48px);
+    margin-bottom: 44px;
+  }
+  .laurels-large img{
+    height: clamp(96px, 13vw, 148px);
+    width: auto;
+  }
+
+  .laurels-small{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(14px, 3vw, 34px);
+  }
+  .laurels-small img{
+    height: clamp(66px, 8vw, 92px);
+    width: auto;
+  }
+
+  /* ---------- SYNOPSIS ---------- */
+
+  .title-inline{
+    font-size: clamp(30px, 5vw, 46px);
+    line-height: 1;
+    margin: 0 0 30px;
+  }
+
+  .body-text{
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(10,10,10,0.82);
+    font-weight: 400;
+    margin: 0 0 40px;
+    max-width: 64ch;
+  }
+
+  .meta-list{
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    row-gap: 12px;
+    font-size: 14px;
+  }
+  .meta-list dt{
+    font-family: 'Anton', Arial, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--dim);
+    padding-top: 2px;
+  }
+  .meta-list dd{
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* ---------- DIRECTOR ---------- */
+
+  .director-name{
+    font-size: clamp(32px, 4.5vw, 44px);
+    margin: 0 0 26px;
+  }
+
+  /* ---------- COMING SOON ---------- */
+
+  .soon-title{
+    font-size: clamp(32px, 5vw, 50px);
+    margin: 0 0 22px;
+    color: var(--ink);
+  }
+  .soon-status{
+    display:inline-block;
+    margin-top: 18px;
+    font-family: 'Anton', Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    padding: 10px 18px;
+    border-radius: 999px;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer{
+    background: var(--ink);
+    color: var(--white);
+    padding: 44px var(--edge);
+    text-align: center;
+  }
+  footer p{
+    margin: 0;
+    font-family: 'Anton', Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- MODAL ---------- */
+
+  .modal-backdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba(5,5,4,0.94);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 5vw;
+  }
+  .modal-backdrop.open{ display: flex; }
+
+  .modal-box{
+    position: relative;
+    width: 100%;
+    max-width: 920px;
+    aspect-ratio: 16/9;
+    background: #000;
+  }
+  .modal-box iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .modal-close{
+    position: absolute;
+    top: -44px;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--bg);
+    font-family: 'Anton', Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .modal-close:hover{ opacity: 0.7; }
+
+  @media (max-width: 640px){
+    section{ padding: 64px var(--edge); }
+    .meta-list{ grid-template-columns: 1fr; row-gap: 4px; }
+    .meta-list dd{ margin-bottom: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+    .play-btn::before{ animation: none; }
+  }
+</style>
 </head>
 <body>
 
-    <!-- 1. HERO — first screen -->
-    <header class="hero">
-        <h1>BLACK HOLE</h1>
-        <h2>A short film by Pia Mechler</h2>
-        
-        <!-- ASSET PLACEHOLDER: Add the teaser video link in the href below -->
-        <a href="#teaser-link" class="teaser-btn">[ WATCH TEASER ]</a>
-        
-        <div class="laurels">
-            FESTIVAL SELECTIONS · BEST COMEDY SHORT NOMINEE — BURBANK INTERNATIONAL FILM FESTIVAL
-        </div>
-    </header>
+  <section class="hero">
+    <div class="poster-frame">
+      <img src="images/poster.jpg" alt="Black Hole — a film by Pia Mechler. Poster featuring the lead actress surrounded by her own doubles in matching neon mesh tops, with festival laurels for Tabor Film Festival, Molise Cinema Film Festival, Burbank International Film Festival, Chelsea Film Festival, El Festivalico, Bornova Short Film Days and Osaka Horizon International Film Festival.">
+      <button class="play-btn" id="openTeaser" aria-label="Watch the teaser">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </section>
+  <p class="hero-caption">Watch the teaser</p>
 
-    <!-- 2. Synopsis Section -->
-    <section class="content-section">
-        <h2>BLACK HOLE</h2>
-        <p>Black Hole is a short film written and directed by Pia Mechler.</p>
-        
-        <!-- ASSET PLACEHOLDER: Add 2-3 sentences about the premise below -->
-        <p>[Insert 2-3 sentences about the premise here. Keep the tone slightly unsettling and editorial.]</p>
-        
-        <div class="metadata">
-            Genre: Psychological comedy / surreal drama<br>
-            Format: Short film<br>
-            Writer / Director: Pia Mechler
-        </div>
-    </section>
+  <section>
+    <p class="eyebrow" style="text-align:center;">Selected for</p>
+    <div class="laurels-large reveal">
+      <img src="images/laurels/burbank-nominee-2025.png" alt="Nominee, Burbank International Film Festival, 2025">
+      <img src="images/laurels/chelsea-official-selection-2024.png" alt="Official Selection, Chelsea Film Festival, 2024">
+      <img src="images/laurels/tabor-official-selection-2024.png" alt="Official Selection, Tabor Film Festival, 2024">
+    </div>
+    <div class="laurels-small reveal">
+      <img src="images/laurels/molise-official-selection-2024.png" alt="Official Selection, Molise Cinema Film Festival Casacalenda, 2024">
+      <img src="images/laurels/bornova-4th-official-selection-2024.png" alt="Official Selection, 4th International Bornova Short Film Days, 2024">
+      <img src="images/laurels/bornova-5th-retrospective-2025.png" alt="Retrospective Selection, 5th International Bornova Short Film Days, 2025">
+      <img src="images/laurels/festivalico-official-selection-2024.png" alt="Official Selection, El Festivalico Shortfilm and Videoart Festival, 2024">
+      <img src="images/laurels/osaka-horizon-nominee-2026.png" alt="Nominee, Osaka Horizon International Film Festival, 2026">
+    </div>
+  </section>
 
-    <!-- 3. Director Bio Section -->
-    <section class="content-section">
-        <h2>PIA MECHLER</h2>
-        <div class="metadata" style="margin-top: -20px; margin-bottom: 30px;">Writer / Director / Actor</div>
-        
-        <!-- ASSET PLACEHOLDER: Add 3-4 sentences for the bio below -->
-        <p>[Insert 3-4 sentences of biographical text here.]</p>
-    </section>
+  <hr class="rule">
 
-    <!-- 4. Footer -->
-    <footer class="footer">
-        <h3>Coming soon</h3>
-        <h2>AFTER THE BLOOD</h2>
-        <p style="font-size: 1rem; color: var(--accent-color);">A psychological horror with a surreal comedic twist</p>
-        
-        <!-- ASSET PLACEHOLDER: Add feature logline below -->
-        <p style="font-size: 0.9rem; font-style: italic;">[Insert feature logline here]</p>
-    </footer>
+  <section>
+    <div class="content reveal">
+      <h2 class="display title-inline">Black Hole</h2>
+      <p class="body-text">A successful actress's career comes to a sudden stop when she reaches 40 and her agent tells her that she is now in the Black Hole of Age. Haunted by that comment, we follow her one afternoon as she spirals into the horrors and amusements of ageism. What is perception and what is imagination? How do people see her — if they see her at all?</p>
+      <dl class="meta-list">
+        <dt>Genre</dt><dd>Psychological comedy / surreal drama</dd>
+        <dt>Format</dt><dd>Short film</dd>
+        <dt>Writer / Director</dt><dd>Pia Mechler</dd>
+      </dl>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="content reveal">
+      <p class="eyebrow">About Pia Mechler</p>
+      <p class="body-text">Born in Germany to a German father and a Polish/Chilean mother, Pia Mechler studied film at the acclaimed European Film College in Denmark. She is an award-nominated director (Almost Settled, Everything Is Wonderful, Black Hole) and actor (Devils (Sky), The Upside, American Sausage Standoff and many more). She resides in Brooklyn, New York.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="content reveal">
+      <p class="eyebrow">Coming soon</p>
+      <h2 class="display soon-title">After the Blood</h2>
+      <p class="body-text" style="margin-bottom:0;">Based on Black Hole, Pia Mechler is developing After the Blood — a dark, twisted comedy that becomes a horror film about making a horror film.</p>
+      <span class="soon-status">Currently in development</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>Black Hole · a film by Pia Mechler</p>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">Close ✕</button>
+      <iframe id="modalIframe" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+<script>
+  const TEASER_1 = "https://player.vimeo.com/video/1011075727?share=copy";
+
+  const backdrop = document.getElementById('modalBackdrop');
+  const iframe = document.getElementById('modalIframe');
+
+  function openModal(url){
+    iframe.src = url;
+    backdrop.classList.add('open');
+  }
+  function closeModal(){
+    backdrop.classList.remove('open');
+    iframe.src = "";
+  }
+
+  document.getElementById('openTeaser').addEventListener('click', () => openModal(TEASER_1));
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  backdrop.addEventListener('click', (e) => { if(e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
